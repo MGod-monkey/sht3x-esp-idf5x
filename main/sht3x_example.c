@@ -20,7 +20,7 @@
 
 /* -- use following constants to define the example mode ----------- */
 
-// #define SINGLE_SHOT_LOW_LEVEL
+#define SINGLE_SHOT_LOW_LEVEL
 // #define SINGLE_SHOT_HIGH_LEVEL
 
 /* -- includes ----------------------------------------------------- */
@@ -172,7 +172,7 @@ void app_main(void)
     i2c_driver_install(i2c_master_port, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
         
     // Create the sensors, multiple sensors are possible.
-    if ((sensor = sht3x_init_sensor(I2C_BUS, SHT3x_ADDR_1)))
+    if ((sensor = sht3x_init_sensor(I2C_MASTER_NUM, SHT3x_ADDR_1)))
     {
         // Create a user task that uses the sensors.
         xTaskCreate(user_task, "user_task", TASK_STACK_DEPTH, NULL, 2, 0);
