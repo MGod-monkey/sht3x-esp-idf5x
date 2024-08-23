@@ -29,7 +29,6 @@
 #include "driver/i2c.h"
 
 /* -- platform dependent definitions ------------------------------- */
-#define ESP_PLATFORM
 #ifdef ESP_PLATFORM  // ESP32 (ESP-IDF)
 
 // user task stack depth for ESP32
